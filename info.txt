@@ -1,3 +1,4 @@
+````markdown
 # GitHub Workflow with Dev Branch
 
 This document defines a clean, scalable GitHub workflow using a `dev` branch. It is designed for team collaboration, code quality, and controlled releases.
@@ -16,14 +17,18 @@ This document defines a clean, scalable GitHub workflow using a `dev` branch. It
   - Integration branch for active development
   - All features merge here first
 
+---
+
 ### Supporting Branches
 
 | Branch Type | Naming Convention | Purpose |
 |------------|------------------|--------|
-| Feature | `feature/<name>` | New features |
-| Bugfix | `bugfix/<name>` | Fixes for development |
-| Hotfix | `hotfix/<name>` | Urgent production fixes |
+| Feature    | `feature/<name>` | New features |
+| Bugfix     | `bugfix/<name>`  | Fixes for development |
+| Hotfix     | `hotfix/<name>`  | Urgent production fixes |
 | Release (optional) | `release/<version>` | Pre-production testing |
+
+---
 
 ## 2. Development Workflow
 
@@ -32,7 +37,7 @@ This document defines a clean, scalable GitHub workflow using a `dev` branch. It
 ```bash
 git checkout dev
 git pull origin dev
-```
+````
 
 ### Step 2: Create a Feature Branch
 
@@ -53,16 +58,21 @@ git commit -m "feat: implement dashboard UI cards"
 git push origin feature/dashboard-ui
 ```
 
+---
+
 ## 3. Pull Request Workflow
 
-- Create Pull Request:
-  - `feature/*` → `dev`
+* Create Pull Request:
 
-### Requirements
+  * `feature/*` → `dev`
 
-- Code review required
-- CI checks must pass
-- No direct merges
+### Requirements:
+
+* Code review required
+* CI checks must pass
+* No direct merges
+
+---
 
 ## 4. Release Workflow
 
@@ -77,8 +87,10 @@ git push origin main
 
 ### Option B: Using Pull Request
 
-- Create PR: `dev` → `main`
-- Review and merge
+* Create PR: `dev` → `main`
+* Review and merge
+
+---
 
 ## 5. Hotfix Workflow
 
@@ -94,41 +106,47 @@ git commit -m "fix: resolve login crash on Android"
 git push origin hotfix/login-crash
 ```
 
-### Then
+### Then:
 
-- Create PR → `main`
-- After merge → merge changes into `dev`
+* Create PR → `main`
+* After merge → merge changes into `dev`
+
+---
 
 ## 6. Commit Message Convention
 
-| Type | Example |
-|------|---------|
-| feat | `feat: add transaction filtering` |
-| fix | `fix: resolve crash on login` |
-| refactor | `refactor: clean up API service` |
-| style | `style: adjust spacing` |
-| test | `test: add unit tests` |
+| Type     | Example                           |
+| -------- | --------------------------------- |
+| feat     | `feat: add transaction filtering` |
+| fix      | `fix: resolve crash on login`     |
+| refactor | `refactor: clean up API service`  |
+| style    | `style: adjust spacing`           |
+| test     | `test: add unit tests`            |
+
+---
 
 ## 7. Branch Protection Rules
 
 ### Protect `main`
 
-- No direct pushes
-- Require pull requests
-- Require approvals
-- Require CI checks
+* No direct pushes
+* Require pull requests
+* Require approvals
+* Require CI checks
 
 ### Protect `dev` (Recommended)
 
-- Require pull requests
-- Require at least one review
+* Require pull requests
+* Require at least one review
+
+---
 
 ## 8. Best Practices
 
 ### Keep Changes Small
 
-- One feature per branch
-- Easier to review and test
+* One feature per branch
+* Easier to review and test
 
 ### Sync Regularly
 
@@ -141,52 +159,68 @@ git merge dev
 
 ### Clean Up Branches
 
-- Delete merged branches
-- Enable auto-delete in GitHub
+* Delete merged branches
+* Enable auto-delete in GitHub
 
 ### Use Draft PRs
 
-- For work-in-progress
-- Gather early feedback
+* For work-in-progress
+* Gather early feedback
 
 ### Use CI/CD
 
-- Run tests on all PRs
-- Prevent broken merges
+* Run tests on all PRs
+* Prevent broken merges
+
+---
 
 ## 9. Workflow Overview
 
-```text
+```
 feature → dev → main
 ```
 
-- Build in `feature/*`
-- Integrate in `dev`
-- Deploy from `main`
+* Build in `feature/*`
+* Integrate in `dev`
+* Deploy from `main`
+
+---
 
 ## 10. Common Mistakes
 
-- Working directly on `main`
-- Large PRs that are hard to review
-- Not pulling latest `dev`
-- Long-lived branches
-- Skipping reviews
+* Working directly on `main`
+* Large PRs that are hard to review
+* Not pulling latest `dev`
+* Long-lived branches
+* Skipping reviews
+
+---
 
 ## 11. Example Branch Names
 
-- `feature/date-range-filter`
-- `feature/dashboard-redesign`
-- `bugfix/login-error`
-- `hotfix/payment-crash`
+* `feature/date-range-filter`
+* `feature/dashboard-redesign`
+* `bugfix/login-error`
+* `hotfix/payment-crash`
+
+---
 
 ## 12. Recommended Setup
 
-- Use `dev` as your working branch
-- Require PR reviews
-- Keep PRs focused (UI vs logic)
-- Maintain clear commit messages
+* Use `dev` as your working branch
+* Require PR reviews
+* Keep PRs focused (UI vs logic)
+* Maintain clear commit messages
+
+---
 
 ## 13. Future Enhancements
 
-- Add `release/*` branches
-- Implement automated deployments
+* Add `release/*` branches
+* Implement automated deployments
+* Consider trunk-based development for scaling
+
+---
+
+```
+```
